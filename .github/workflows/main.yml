@@ -7,7 +7,7 @@ on:
 
 jobs:
   setup-environment:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Install dependencies
         run: |
@@ -15,7 +15,7 @@ jobs:
           sudo apt-get install -y -f build-essential g++ cmake
   build:
     needs: setup-environment
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v3
       - name: Build
